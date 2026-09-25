@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Tree</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section id="top" class="s0 parallax">
+      <div class="bubble title">
+        <h1>The Little Apple’s Journey</h1>
+      </div>
+    </section>
+
+    <section class="words">
+      <p>
+        There is an apple tree in the middle of a meadow.<br />
+        The tree is full of ripe apples.
+      </p>
+    </section> 
+
+    <section class="s00 parallax">
+      <div class="bubble">
+        <p>You're the biggest apple. <br />
+       You've always had one dream: to be eaten.
+        </p>
+      </div>
+    </section>
+
+    <section class="words">
+      <p>To find someone who’s willing to eat you,<br />
+        you swing your body with all your might.
+      </p>
+    </section> 
+
+    <section class="s1 parallax">
+      <div class="bubble">
+        <p>And so, you fell.</p>
+      </div>
+    </section>
+    
+    <section class="s2 parallax">
+    </section>
+
+    <section class="words">
+      <p>
+        You roll and roll until you roll into a little stream.
+      </p>
+    </section> 
+
+    <section class="s33 parallax">
+    </section>
+
+    <section class="s3 parallax">
+      <div class="bubble">
+        <p>You came across a duck.</p>
+      </div>
+    </section>
+
+    <section class="s3 parallax duck-talk">
+      <div class="bubble">
+        <p>“Thank you. You’re quite a big one… But my little beak is far too small to eat you.”</p>
+      </div>
+      <div class="bubble apple-talk">
+        <p>“Hello, little duck. Are you hungry? Perhaps… you could have a bite of me.”</p>
+      </div>
+    </section>
+
+    <section class="s33 parallax">
+      <div class="bubble">
+        <p>The duck swam away, and you continued on your journey.</p>
+      </div>
+    </section>
+
+ <section class="words">
+      <p>
+        You came across a rock.
+      </p>
+    </section> 
+
+    <section class="s4 parallax stone-talk">
+      <div class="bubble">
+        <p>“Hello, little rock. Are you hungry? Perhaps… you could have a bite of me.”</p>
+      </div>
+      <div class="bubble stone-reply">
+        <p>“I’m only a stone. I’ve never known what hunger feels like… But keep going. I’m sure you’ll meet someone who does.”</p>
+      </div>
+    </section>
+
+    <section class="words">
+      <p>
+      You remember what the duck said. If you were only a little smaller… perhaps the stone could help. <br />
+      Then the duck might be able to eat you after all.
+      </p>
+      <div class="picks" aria-label="Choose your path">
+        <a class="pick pick-stone" href="#borrow-rock">Ask the stone for help</a>
+        <a class="pick pick-water" href="#drift-away">Keep drifting</a>
+      </div>
+    </section> 
+
+    <div class="after-pick">
+      <div id="duck-way">
+      <section id="borrow-rock" class="words route stone-route">
+      <p>You borrow the stone's strength and become smaller.</p>
+      </section>
+
+      <section id="smallpiece" class="crumb parallax duck-way-scene crumb-scene">
+        <div class="bubble">
+          <p>“Oh no... I’m only a little piece now.”</p>
+        </div>
+      </section>
+
+      <section id="duckmeet" class="meet-duck parallax duck-way-scene meet-scene">
+        <div class="bubble">
+          <p>“Are you the apple I met before?”</p>
+        </div>
+      </section>
+
+      <section id="duckend" class="last-duck parallax duck-way-scene last-scene">
+        <div class="bubble">
+          <p>“Yes! You’re small enough now. Thank you!”</p>
+        </div>
+      </section>
+
+      <section class="words finish duck-finish">
+      <h2>End 1: The Duck</h2>
+      <p>The duck finds you at last and carries you safely home.</p>
+      <a class="link restart" href="#top">Restart</a>
+      </section>
+      </div>
+
+      <div id="water-way">
+      <section id="drift-away" class="words route water-route">
+        <p>You let the current carry you onward through the water.</p>
+      </section>
+
+      <section id="5" class="s5 parallax otter-talk otter-one">
+        <div class="bubble">
+          <p>“What is that bright red thing floating in the river?”</p>
+        </div>
+      </section>
+
+      <section id="6" class="s6 parallax otter-talk otter-two">
+        <div class="bubble">
+          <p>“It looks like an apple. I should take a closer look.”</p>
+        </div>
+      </section>
+
+      <section class="s7 parallax otter-talk otter-three">
+        <div class="bubble">
+          <p>“You are just the right size to hold.”</p>
+        </div>
+      </section>
+
+      <section class="s8 parallax otter-talk otter-four">
+        <div class="bubble">
+          <p>“Crunch!”</p>
+        </div>
+      </section>
+
+      <section class="s9 parallax otter-talk otter-five">
+        <div class="bubble">
+          <p>“Delicious! Thank you for becoming my dinner.”</p>
+        </div>
+      </section>
+
+      <section class="words finish otter-finish">
+        <h2>End 2: The Otter</h2>
+        <p>The otter eats the apple, and your journey ends happily by the river.</p>
+        <a class="link restart" href="#top">Restart</a>
+      </section>
+      </div>
+    </div>
+
+    <script>
+      const body = document.body;
+      const borrowChoice = document.querySelector(".pick-stone");
+      const driftChoice = document.querySelector(".pick-water");
+      const restart = document.querySelector(".restart");
+
+      borrowChoice.addEventListener("click", () => {
+        body.classList.add("path-chosen", "borrow-path");
+      });
+
+      driftChoice.addEventListener("click", () => {
+        body.classList.add("path-chosen");
+        body.classList.remove("borrow-path");
+      });
+
+      restart.addEventListener("click", () => {
+        body.classList.remove("path-chosen", "borrow-path");
+      });
+    </script>
+
+  </body>
+</html>

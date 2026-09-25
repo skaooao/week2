@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Chalkboard SE", "Comic Sans MS", cursive;
+  color: #444;
+  background: #faf7f4;
+  letter-spacing: 0.2px;
+}
+
+.parallax {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+.interactive-tree {
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-hit {
+  position: absolute;
+  width: 9vw;
+  height: 9vw;
+  max-width: 130px;
+  max-height: 130px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: 50% 0;
+}
+
+.apple-hit:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.apple-hit.falling {
+  animation: apple-fall 1.1s ease-in forwards;
+}
+
+.apple-a { top: 7%; left: 0%; }
+.apple-b { top: 7%; left: 36%; }
+.apple-c { top: 0%; left: 58%; }
+.apple-d { top: 17%; right: 4%; }
+.apple-e { top: 27%; left: 58%; width: 6vw; height: 6vw; }
+.apple-f { top: 55%; left: 42%; width: 18vw; height: 18vw; max-width: 280px; max-height: 280px; }
+
+@keyframes apple-fall {
+  0%, 25% { transform: rotate(0deg); }
+  45% { transform: rotate(-12deg); }
+  60% { transform: rotate(12deg); }
+  100% { opacity: 0; transform: translateY(120vh) rotate(35deg); }
+}
+
+.s0 {
+  background-image: url("images/start.png");
+}
+
+.s00 {
+  background-image: url("images/big.png");
+}
+
+.s1 {
+  background-image: url("images/tree.png");
+}
+
+.s2 {
+  background-image: url("images/meadow.png");
+}
+
+.s3 {
+  background-image: url("images/duck.png");
+}
+
+.s33 {
+  background-image: url("images/river.png");
+}
+
+.s4 {
+  background-image: url("images/stone.png");
+}
+
+.s5 {
+  background-image: url("images/otter.png");
+}
+
+.s6 {
+  background-image: url("images/swim.png");
+}
+
+.s7 {
+  background-image: url("images/hold.png");
+}
+
+.s8 {
+  background-image: url("images/bite.png");
+}
+
+.s9 {
+  background-image: url("images/finish.png");
+}
+
+.crumb {
+  background-image: url("images/crumb.png");
+}
+
+.meet-duck {
+  background-image: url("images/meet-duck.png");
+}
+
+.last-duck {
+  background-image: url("images/last-duck.png");
+}
+
+.words {
+  min-height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px;
+  background: #fffaf8;
+}
+
+.picks {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pick,
+.link {
+  display: inline-block;
+  padding: 14px 22px;
+  color: #444;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(68, 68, 68, 0.25);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pick:hover,
+.pick:focus-visible,
+.link:hover,
+.link:focus-visible {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.route {
+  min-height: 45vh;
+  gap: 20px;
+}
+
+.stone-route {
+  background: #f7eee2;
+}
+
+.water-route {
+  background: #eaf5f4;
+}
+
+#water-way {
+  display: block;
+}
+
+.borrow-path #water-way {
+  display: none;
+}
+
+#duck-way {
+  display: none;
+}
+
+.borrow-path #duck-way {
+  display: block;
+}
+
+.after-pick {
+  display: none !important;
+}
+
+.path-chosen .after-pick {
+  display: block !important;
+}
+
+.finish {
+  min-height: 55vh;
+  gap: 20px;
+}
+
+.duck-finish {
+  background: #fff2bd;
+}
+
+.otter-finish {
+  background: #dff3f1;
+}
+
+.bubble {
+  background: rgba(255, 255, 255, 0.75);
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(6px);
+
+  max-width: 500px;
+}
+
+.duck-talk {
+  position: relative;
+}
+
+.duck-talk .bubble {
+  position: absolute;
+  top: 22%;
+  right: 8%;
+  max-width: 240px;
+  padding: 22px 28px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.duck-talk .apple-talk {
+  top: 52%;
+  left: 14%;
+  right: auto;
+  max-width: 190px;
+  padding: 18px 26px;
+}
+
+.stone-talk {
+  position: relative;
+}
+
+.stone-talk .bubble {
+  position: absolute;
+  top: 57%;
+  left: 5%;
+  max-width: 280px;
+  padding: 22px 28px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.stone-talk .stone-reply {
+  top: 20%;
+  right: 5%;
+  left: auto;
+  max-width: 245px;
+  padding: 20px 26px;
+}
+
+.otter-talk {
+  position: relative;
+}
+
+.otter-talk .bubble {
+  position: absolute;
+  max-width: 270px;
+  padding: 20px 26px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.otter-one .bubble {
+  top: 18%;
+  right: 8%;
+}
+
+.otter-two .bubble {
+  top: 16%;
+  left: 8%;
+}
+
+.otter-three .bubble {
+  top: 13%;
+  right: 7%;
+}
+
+.otter-four .bubble {
+  top: 12%;
+  left: 7%;
+}
+
+.otter-five .bubble {
+  top: 14%;
+  right: 7%;
+}
+
+.duck-way-scene {
+  position: relative;
+}
+
+.duck-way-scene .bubble {
+  position: absolute;
+  max-width: 250px;
+  padding: 20px 26px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.crumb-scene .bubble {
+  top: 13%;
+  left: 8%;
+}
+
+.meet-scene .bubble {
+  top: 14%;
+  left: 7%;
+}
+
+.last-scene .bubble {
+  top: 12%;
+  left: 8%;
+}
+
+h1,
+h2 {
+  font-family: "Bradley Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.6;
+}
